@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: 26 مايو 2018 الساعة 15:56
--- إصدار الخادم: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Host: 127.0.0.1
+-- Generation Time: Mar 04, 2022 at 12:36 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `about_us`
+-- Table structure for table `about_us`
 --
 
 CREATE TABLE `about_us` (
@@ -36,7 +35,7 @@ CREATE TABLE `about_us` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `about_us`
+-- Dumping data for table `about_us`
 --
 
 INSERT INTO `about_us` (`about_id`, `about_heading`, `about_short_desc`, `about_desc`) VALUES
@@ -45,7 +44,7 @@ INSERT INTO `about_us` (`about_id`, `about_heading`, `about_short_desc`, `about_
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `admins`
+-- Table structure for table `admins`
 --
 
 CREATE TABLE `admins` (
@@ -61,7 +60,7 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `admins`
+-- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_contact`, `admin_country`, `admin_job`, `admin_about`) VALUES
@@ -70,7 +69,7 @@ INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `ad
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `bundle_product_relation`
+-- Table structure for table `bundle_product_relation`
 --
 
 CREATE TABLE `bundle_product_relation` (
@@ -81,7 +80,7 @@ CREATE TABLE `bundle_product_relation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `bundle_product_relation`
+-- Dumping data for table `bundle_product_relation`
 --
 
 INSERT INTO `bundle_product_relation` (`rel_id`, `rel_title`, `product_id`, `bundle_id`) VALUES
@@ -92,7 +91,7 @@ INSERT INTO `bundle_product_relation` (`rel_id`, `rel_title`, `product_id`, `bun
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -106,7 +105,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -117,7 +116,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_top`, `cat_image`) VALUES
@@ -129,7 +128,7 @@ INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_top`, `cat_image`) VALUES
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `contact_us`
+-- Table structure for table `contact_us`
 --
 
 CREATE TABLE `contact_us` (
@@ -140,7 +139,7 @@ CREATE TABLE `contact_us` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `contact_us`
+-- Dumping data for table `contact_us`
 --
 
 INSERT INTO `contact_us` (`contact_id`, `contact_email`, `contact_heading`, `contact_desc`) VALUES
@@ -149,7 +148,7 @@ INSERT INTO `contact_us` (`contact_id`, `contact_email`, `contact_heading`, `con
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `coupons`
+-- Table structure for table `coupons`
 --
 
 CREATE TABLE `coupons` (
@@ -163,7 +162,7 @@ CREATE TABLE `coupons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `coupons`
+-- Dumping data for table `coupons`
 --
 
 INSERT INTO `coupons` (`coupon_id`, `product_id`, `coupon_title`, `coupon_price`, `coupon_code`, `coupon_limit`, `coupon_used`) VALUES
@@ -172,7 +171,7 @@ INSERT INTO `coupons` (`coupon_id`, `product_id`, `coupon_title`, `coupon_price`
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `customers`
+-- Table structure for table `customers`
 --
 
 CREATE TABLE `customers` (
@@ -190,16 +189,16 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `customers`
+-- Dumping data for table `customers`
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`, `customer_confirm_code`) VALUES
-(2, 'user', 'user@ave.com', '123', 'United State', 'New York', '0092334566931', 'new york', 'user.jpg', '::1', '');
+(2, 'user', 'user@ave.com', '123', 'Kenya', 'Nairobi', '254740480364', '102, Muthama', 'user.jpg', '::1', '');
 
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `customer_orders`
+-- Table structure for table `customer_orders`
 --
 
 CREATE TABLE `customer_orders` (
@@ -209,12 +208,12 @@ CREATE TABLE `customer_orders` (
   `invoice_no` int(100) NOT NULL,
   `qty` int(10) NOT NULL,
   `size` text NOT NULL,
-  `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `order_status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `customer_orders`
+-- Dumping data for table `customer_orders`
 --
 
 INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `size`, `order_date`, `order_status`) VALUES
@@ -228,7 +227,7 @@ INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `enquiry_types`
+-- Table structure for table `enquiry_types`
 --
 
 CREATE TABLE `enquiry_types` (
@@ -237,7 +236,7 @@ CREATE TABLE `enquiry_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `enquiry_types`
+-- Dumping data for table `enquiry_types`
 --
 
 INSERT INTO `enquiry_types` (`enquiry_id`, `enquiry_title`) VALUES
@@ -248,7 +247,7 @@ INSERT INTO `enquiry_types` (`enquiry_id`, `enquiry_title`) VALUES
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `manufacturers`
+-- Table structure for table `manufacturers`
 --
 
 CREATE TABLE `manufacturers` (
@@ -259,7 +258,7 @@ CREATE TABLE `manufacturers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `manufacturers`
+-- Dumping data for table `manufacturers`
 --
 
 INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufacturer_top`, `manufacturer_image`) VALUES
@@ -272,7 +271,7 @@ INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufactu
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `payments`
+-- Table structure for table `payments`
 --
 
 CREATE TABLE `payments` (
@@ -286,7 +285,7 @@ CREATE TABLE `payments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `payments`
+-- Dumping data for table `payments`
 --
 
 INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `ref_no`, `code`, `payment_date`) VALUES
@@ -296,7 +295,7 @@ INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `r
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `pending_orders`
+-- Table structure for table `pending_orders`
 --
 
 CREATE TABLE `pending_orders` (
@@ -310,7 +309,7 @@ CREATE TABLE `pending_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `pending_orders`
+-- Dumping data for table `pending_orders`
 --
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
@@ -324,7 +323,7 @@ INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -332,7 +331,7 @@ CREATE TABLE `products` (
   `p_cat_id` int(10) NOT NULL,
   `cat_id` int(10) NOT NULL,
   `manufacturer_id` int(10) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `product_title` text NOT NULL,
   `product_url` text NOT NULL,
   `product_img1` text NOT NULL,
@@ -349,7 +348,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `date`, `product_title`, `product_url`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_psp_price`, `product_desc`, `product_features`, `product_video`, `product_keywords`, `product_label`, `status`) VALUES
@@ -367,7 +366,7 @@ INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `product_categories`
+-- Table structure for table `product_categories`
 --
 
 CREATE TABLE `product_categories` (
@@ -378,7 +377,7 @@ CREATE TABLE `product_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `product_categories`
+-- Dumping data for table `product_categories`
 --
 
 INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_top`, `p_cat_image`) VALUES
@@ -390,7 +389,7 @@ INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_top`, `p_cat
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `store`
+-- Table structure for table `store`
 --
 
 CREATE TABLE `store` (
@@ -403,7 +402,7 @@ CREATE TABLE `store` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `store`
+-- Dumping data for table `store`
 --
 
 INSERT INTO `store` (`store_id`, `store_title`, `store_image`, `store_desc`, `store_button`, `store_url`) VALUES
@@ -414,7 +413,7 @@ INSERT INTO `store` (`store_id`, `store_title`, `store_image`, `store_desc`, `st
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `terms`
+-- Table structure for table `terms`
 --
 
 CREATE TABLE `terms` (
@@ -425,7 +424,7 @@ CREATE TABLE `terms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `terms`
+-- Dumping data for table `terms`
 --
 
 INSERT INTO `terms` (`term_id`, `term_title`, `term_link`, `term_desc`) VALUES
@@ -436,7 +435,7 @@ INSERT INTO `terms` (`term_id`, `term_title`, `term_link`, `term_desc`) VALUES
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `wishlist`
+-- Table structure for table `wishlist`
 --
 
 CREATE TABLE `wishlist` (
@@ -446,7 +445,7 @@ CREATE TABLE `wishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- إرجاع أو استيراد بيانات الجدول `wishlist`
+-- Dumping data for table `wishlist`
 --
 
 INSERT INTO `wishlist` (`wishlist_id`, `customer_id`, `product_id`) VALUES

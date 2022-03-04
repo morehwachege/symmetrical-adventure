@@ -11,11 +11,13 @@ $run_customer = mysqli_query($con,$select_customer);
 $row_customer = mysqli_fetch_array($run_customer);
 
 $customer_id = $row_customer['customer_id'];
+$customer_contact= $row_customer['customer_contact'];
 
 
 ?>
 
 <h1 class="text-center">Payment Options For You</h1>
+<h1 class="text-center"><?php echo $customer_contact ?></h1>
 
 <p class="lead text-center">
 
@@ -25,11 +27,11 @@ $customer_id = $row_customer['customer_id'];
 
 <center><!-- center Starts -->
 
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <form action="stk_initiate.php" method="post" target="_top">
   <input type="hidden" name="cmd" value="_s-xclick">
   <input type="hidden" name="hosted_button_id" value="9PWJZYVQH8KGU">
   <input type="image" name="submit" width="95" height="80" src="images/mpesa.png">
-  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+  <!-- <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> -->
   </form>
 
 <?php

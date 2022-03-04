@@ -43,8 +43,9 @@ include("customer/customer_login.php");
 
 include("payment_options.php");
 
-}
 
+
+}
 
 
 ?>

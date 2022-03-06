@@ -1,3 +1,10 @@
+
+<form action="stk_initiate.php" method="post">
+  <input type="text" name="customer_contact" id="">
+  <input type="submit" value="submit">
+</form>
+
+
 <?php
 if(isset($_POST['submit'])){
 

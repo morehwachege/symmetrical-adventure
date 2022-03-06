@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2022 at 12:36 PM
+-- Generation Time: Mar 06, 2022 at 02:22 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
@@ -18,8 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ecom_store`
+-- Database: `hotelaid_ecom_store`
 --
+CREATE DATABASE IF NOT EXISTS `hotelaid_ecom_store` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `hotelaid_ecom_store`;
 
 -- --------------------------------------------------------
 
@@ -101,6 +103,13 @@ CREATE TABLE `cart` (
   `p_price` varchar(255) NOT NULL,
   `size` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `p_price`, `size`) VALUES
+(8, '::1', 0, '100', 'Select a Size');
 
 -- --------------------------------------------------------
 
